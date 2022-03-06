@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <title>kelime Oyunu</title>
+ 
+</head>
+
+<body>
+  <header>
+    <div>kelime Oyunu</div>🟩🟨⬛<div id='sub-header'></div>
+  </header>
+  <section id='canvas'>
+    <div>
+      <section id="matris_select">
+        <h1>Lütfen Bir Oyun Düzeni Seçiniz: </h1>
+        <button type="button" id="three">3X3</button>
+        <button type="button" id="four">4X4</button>
+        <button type="button" id="five">5X5</button>
+
+        
+      </section>
+    </div>
+    <div id='messages'></div>
+    <div id='board'></div>
+    <div id='keypad'>
+      <div id='alphabets'></div>
+      <div id='special-keys'></div>
+    </div>
+  </section>
+
+  <section id="banner">
+    <div>
+      Tebrikler! Başardın.
+    </div>
+    <div class='banner-msg'>Puanınızı arkadaşlarınızla paylaşın ve kurumsal kelime hakkında bilgi yayın ;)</div>
+    <div class='share'>
+       Paylaş
+       <a href="#">Twitter</a> 
+       <a href="#">Instagram</a> 
+       <a href="#">Facebook</a> 
+    </div>
+    <div>Yarın Yeni Puzzle için gel.</div>
+    <div class='divider'></div>
+    <div>Yarına kadar bekleyemez misin?</div>
+    <div class='share' id='restart-random' onclick="startGame(true)">Yeni Bir Oyun Başlat</div>
+  </section>
+  <section id="answer-banner">
+    <div>
+      Oh hayır!.
+    </div>
+    <div id='answer-text'></div>
+    <div class='banner-msg'>Bir dahaki sefere daha iyi şanslar.</div>
+    <div>Yeni bir bulmaca için yarın tekrar gelin.</div>
+    <div class='divider'></div>
+    <div>Yarına kadar bekleyemez misin?</div>
+    <div class='share' id='restart-random' onclick="startGame(true)">Yeni Bir Oyun Başlat</div>
+  </section>
+
+  <script type="module" src='./app.js' onload="startGame()"></script>
+  <script>
+  const startGame = (random = false) => {
+      wordle.startGame(random);
+    }
+  </script>
+</body>
+
+</html>
